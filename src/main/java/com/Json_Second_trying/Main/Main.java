@@ -1,7 +1,6 @@
 package com.Json_Second_trying.Main;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -34,7 +33,6 @@ public class Main {
         } catch (IOException iOE) {
             System.out.println(iOE.getMessage());
         }
-
 
         try {
             oMapper.writeValue(new File("Json2_2.json"), book3);
