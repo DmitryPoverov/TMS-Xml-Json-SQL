@@ -36,7 +36,7 @@ public class Main {
         user3.setLevel("Countess 1");
 
         try {
-            objMapper.writeValue(new File("Json2.json"), user3);
+            objMapper.writeValue(new File("Json1.json"), user3);
         } catch (IOException iOE) {
             System.out.println(iOE.getMessage());
         }
