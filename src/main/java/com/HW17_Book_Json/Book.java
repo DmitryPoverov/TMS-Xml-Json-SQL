@@ -1,4 +1,4 @@
-package com.Json_Second_trying.Main;
+package com.HW17_Book_Json;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -12,7 +12,7 @@ public class Book {
     private int year;
 
     @JsonIgnore
-    private List<Book> theSameBooks = new ArrayList<Book>();
+    private List<Book> theSameBooks = new ArrayList<>();
 
     public Book() {
     }
