@@ -97,8 +97,6 @@ public class Main {
 
         } catch (JAXBException jaxbException) {
             System.out.println(jaxbException.getMessage());
-        } finally {
-
         }
 
         System.out.println();
