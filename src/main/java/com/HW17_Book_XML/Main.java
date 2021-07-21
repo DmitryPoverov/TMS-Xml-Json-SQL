@@ -9,7 +9,6 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
 
-
         Book book1 = new Book();
         Book book2 = new Book();
         Book book3 = new Book();
