@@ -117,7 +117,6 @@ public class Main {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.marshal(library2, new File("LibraryProperties.xml"));
             marshaller.marshal(library2, System.out);
-
         } catch (JAXBException jaxbException) {
             System.out.println(jaxbException.getMessage());
         }
