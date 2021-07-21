@@ -1,0 +1,36 @@
+package com.XML_Second_trying;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Dogs dog1 = new Dogs("Toby", 3, 19.028);
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Dogs.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.marshal(dog1, new File("DogProperty.xml"));
+//            marshaller.marshal(dog1, System.out);
+            System.out.println("\nXML file wrote successfully.\n");
+
+        } catch (JAXBException jaxbException) {
+            System.out.println(jaxbException.getMessage());
+        }
+
+        try {
+            int c;
+            BufferedReader bf = new BufferedReader(new FileReader("DogProperty.xml"));
+            System.out.println("The current file content:");
+            while ((c = bf.read()) != -1) {
+                System.out.print((char) c);
+            }
+        } catch (IOException iOE) {
+            System.out.println(iOE.getMessage());
+        }
+    }
+}

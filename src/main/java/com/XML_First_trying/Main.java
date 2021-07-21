@@ -25,7 +25,7 @@ public class Main {
         try {
             JAXBContext context = JAXBContext.newInstance(Cat.class);
             Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.marshal(cat1, sw);
 
             resultXML = sw.toString();
