@@ -5,6 +5,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -67,5 +69,70 @@ public class Main {
         System.out.println("The serialized book: " + book2);
         System.out.println("\nThe original book: " + book3);
         System.out.println("The serialized book: " + book4);
+
+        List<Book> bList1 = new ArrayList<>();
+        List<Book> bList2 = new ArrayList<>();
+
+        bList1.add(book1);
+        bList1.add(book2);
+        bList1.add(book3);
+
+        bList2.add(book1);
+        bList2.add(book2);
+        bList2.add(book3);
+        bList2.add(book4);
+
+        Library library1 = new Library("Brookline str,14", bList1, 1983);
+        Library library2 = new Library("Manchester str,89", bList2, 1897);
+
+        Library library3 = new Library();
+        Library library4 = new Library();
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Library.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.marshal(library1, new File("LibraryProperties.xml"));
+            marshaller.marshal(library1, System.out);
+
+        } catch (JAXBException jaxbException) {
+            System.out.println(jaxbException.getMessage());
+        } finally {
+
+        }
+
+        System.out.println();
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Library.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            library3 = (Library) unmarshaller.unmarshal(new File("LibraryProperties.xml"));
+        } catch (JAXBException jaxbException) {
+            System.out.println(jaxbException.getMessage());
+        }
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Library.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.marshal(library2, new File("LibraryProperties.xml"));
+            marshaller.marshal(library2, System.out);
+
+        } catch (JAXBException jaxbException) {
+            System.out.println(jaxbException.getMessage());
+        }
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(Library.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            library4 = (Library) unmarshaller.unmarshal(new File("LibraryProperties.xml"));
+        } catch (JAXBException jaxbException) {
+            System.out.println(jaxbException.getMessage());
+        }
+
+        System.out.println("\nLibrary 1 (Original): " + library1);
+        System.out.println("Library 2 (Original): " + library2);
+        System.out.println("Library 3 (Serialized): " + library3);
+        System.out.println("Library 4 (Serialized): " + library4);
     }
 }

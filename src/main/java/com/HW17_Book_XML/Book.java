@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlType(name = "Book")
+@XmlType(name = "book111")
 @XmlRootElement
 
 public class Book {
@@ -55,7 +55,6 @@ public class Book {
 
     private String getBookName() {
         StringBuilder sb = new StringBuilder();
-
         for (int i=0; i<theSameBooks.size(); i++) {
             if (i == theSameBooks.size() - 1) {
                 sb.append(theSameBooks.get(i).getName()).append('.');

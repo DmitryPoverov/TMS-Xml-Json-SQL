@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<library>
+    <address>Manchester str,89</address>
+    <books>
+        <marking>10001</marking>
+        <name>Cinderella</name>
+        <year>2020</year>
+    </books>
+    <books>
+        <marking>10001</marking>
+        <name>Cinderella</name>
+        <year>2020</year>
+    </books>
+    <books>
+        <marking>10002</marking>
+        <name>Rapunzel</name>
+        <year>2018</year>
+    </books>
+    <books>
+        <marking>10002</marking>
+        <name>Rapunzel</name>
+        <year>2018</year>
+    </books>
+    <openingAge>1897</openingAge>
+</library>

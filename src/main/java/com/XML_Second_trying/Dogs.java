@@ -15,10 +15,10 @@ public class Dogs {
     public Dogs() {
     }
 
-    public Dogs(String name1, int award2, double weight3) {
-        this.name = name1;
-        this.award = award2;
-        this.weight = weight3;
+    public Dogs(String name, int award, double weight) {
+        this.name = name;
+        this.award = award;
+        this.weight = weight;
     }
 
     public String getName() {
