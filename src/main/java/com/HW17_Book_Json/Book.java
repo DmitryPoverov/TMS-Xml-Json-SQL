@@ -56,9 +56,9 @@ public class Book {
 
         for (int i=0; i<theSameBooks.size(); i++) {
             if (i == theSameBooks.size() - 1) {
-                sb.append(theSameBooks.get(i).getName() + '.');
+                sb.append(theSameBooks.get(i).getName()).append('.');
             } else {
-                sb.append(theSameBooks.get(i).getName() + ", ");
+                sb.append(theSameBooks.get(i).getName()).append(", ");
             }
         }
         return sb.toString();
