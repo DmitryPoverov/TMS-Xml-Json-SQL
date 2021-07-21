@@ -1,7 +1,6 @@
 package com.XML_First_trying;
 
 import com.XML_First_trying.Cat.Cat;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;

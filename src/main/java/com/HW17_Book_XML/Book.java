@@ -1,25 +1,28 @@
 package com.HW17_Book_XML;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.List;
+
+@XmlType(name = "Book")
+@XmlRootElement
 
 public class Book {
 
     private int marking;
     private String name;
-    private int year;
+    private int yea;
 
     private List<Book> theSameBooks = new ArrayList<>();
 
     public Book() {
     }
 
-    public Book(int marking, String name, int year) {
+    public Book(int marking, String name, int yea) {
         this.marking = marking;
         this.name = name;
-        this.year = year;
+        this.yea = yea;
     }
 
     public int getMarking() {
@@ -29,7 +32,7 @@ public class Book {
         return name;
     }
     public int getYear() {
-        return year;
+        return yea;
     }
     public void getSameBooks() {
         for (Book b : theSameBooks) {
@@ -43,8 +46,8 @@ public class Book {
     public void setName(String name) {
         this.name = name;
     }
-    public void setYear(int year) {
-        this.year = year;
+    public void setYear(int yea) {
+        this.yea = yea;
     }
     public void setTheSameBooks(Book book) {
         theSameBooks.add(book);
@@ -52,14 +55,20 @@ public class Book {
 
     private String getBookName() {
         StringBuilder sb = new StringBuilder();
-        for (Book b : theSameBooks) {
-            sb.append(b.getName() + ' ');
+
+        for (int i=0; i<theSameBooks.size(); i++) {
+            if (i == theSameBooks.size() - 1) {
+                sb.append(theSameBooks.get(i).getName()).append('.');
+            } else {
+                sb.append(theSameBooks.get(i).getName()).append(", ");
+            }
         }
         return sb.toString();
     }
 
     @Override
     public String toString() {
-        return "№" + marking + " [" + name + ", " + year + "], same books: " + getBookName();
+        return "№" + marking + " [" + name + ", " + yea + "]"
+                + (theSameBooks.size()==0? "." : (", same books: " + getBookName()));
     }
 }
