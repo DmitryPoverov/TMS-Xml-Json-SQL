@@ -38,8 +38,6 @@ public class Book {
         }
     }
 
-
-
     public void setMarking(int marking) {
         this.marking = marking;
     }
@@ -55,15 +53,20 @@ public class Book {
 
     private String getBookName() {
         StringBuilder sb = new StringBuilder();
-        for (Book b : theSameBooks) {
-            sb.append(b.getName() + ' ');
+
+        for (int i=0; i<theSameBooks.size(); i++) {
+            if (i == theSameBooks.size() - 1) {
+                sb.append(theSameBooks.get(i).getName() + '.');
+            } else {
+                sb.append(theSameBooks.get(i).getName() + ", ");
+            }
         }
         return sb.toString();
     }
 
-
     @Override
     public String toString() {
-        return "№" + marking + " [" + name + ", " + year + "], same books: " + getBookName();
+        return "№" + marking + " [" + name + ", " + year + "]"
+                + (theSameBooks.size()==0? "." : (", same books: " + getBookName()));
     }
 }
