@@ -58,6 +58,11 @@ public class Main {
             System.out.println(jaxbException.getMessage());
         }
 
+        book2.setTheSameBooks(book1);
+        book2.setTheSameBooks(book2);
+        book4.setTheSameBooks(book3);
+        book4.setTheSameBooks(book4);
+
         System.out.println("\nThe original book: " + book1);
         System.out.println("The serialized book: " + book2);
         System.out.println("\nThe original book: " + book3);
