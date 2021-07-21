@@ -12,11 +12,11 @@ public class Converter {
     public static void toJSON(User user) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(baseFile), user);
-        System.out.println("A json file created.");
+//        System.out.println("A json file created.");
     }
     public static User toJavaObject() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        System.out.println("A mapper created.");
+//        System.out.println("A mapper created.");
         return mapper.readValue(new File(baseFile), User.class);
     }
 }

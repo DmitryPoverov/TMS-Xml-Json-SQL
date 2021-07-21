@@ -11,9 +11,9 @@ public class Main {
         ObjectMapper objMapper = new ObjectMapper();
 
         User user1 = new User();
-        user1.setId(1000002562L);
+        user1.setId(10000002562L);
         user1.setName("Marry");
-        user1.setPhone("+37529-711-77-17");
+        user1.setPhone("+44-7885-111-77-17");
 
         User user2 = new User();
 
@@ -30,13 +30,15 @@ public class Main {
         System.out.println("User2: " + user2);
 
         User user3 = new User();
-        user3.setId(10002556);
+        user3.setId(10000002556L);
         user3.setName("Sybil");
-        user3.setPhone("+375-29-889-78-67");
+        user3.setPhone("+44-7958-089-78-67");
         user3.setLevel("Countess 1");
 
+        System.out.println("User3: " + user3);
+
         try {
-            objMapper.writeValue(new File("Json1.json"), user3);
+            objMapper.writeValue(new File("Json2.json"), user3);
         } catch (IOException iOE) {
             System.out.println(iOE.getMessage());
         }
