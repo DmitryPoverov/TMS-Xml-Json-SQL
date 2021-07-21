@@ -3,10 +3,10 @@ package com.XML_First_trying.Cat;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "cat")
+@XmlType(name = "cat123")
 @XmlRootElement
 
-public class Cat {
+public class CaFirstt {
 
     private String name;
     private int age;
