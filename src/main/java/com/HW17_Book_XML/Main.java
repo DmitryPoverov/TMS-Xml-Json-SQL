@@ -131,7 +131,7 @@ public class Main {
         }
 
         System.out.println("\nLibrary 1 (Original): " + library1);
-        System.out.println("Library 2 (Original): " + library2);
+        System.out.println(  "Library 2 (Original): " + library2);
         System.out.println("Library 3 (Serialized): " + library3);
         System.out.println("Library 4 (Serialized): " + library4);
     }
