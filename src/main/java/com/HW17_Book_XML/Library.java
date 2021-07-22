@@ -4,8 +4,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.List;
 
-@XmlType(name = "library222")
-@XmlRootElement
+@XmlType(propOrder = { "openingAge", "address", "books" })
+@XmlRootElement ( name = "library222")
 
 public class Library {
 

@@ -82,11 +82,16 @@ public class Main {
         bList2.add(book3);
         bList2.add(book4);
 
-        Library library1 = new Library("Brookline str,14", bList1, 1983);
+        Library library1 = new Library();
+        library1.setAddress("Brookline str,14");
+        library1.setBooks(bList1);
+        library1.setOpeningAge(1983);
         Library library2 = new Library("Manchester str,89", bList2, 1897);
 
         Library library3 = new Library();
         Library library4 = new Library();
+
+        System.out.println();
 
         try {
             JAXBContext context = JAXBContext.newInstance(Library.class);
@@ -98,8 +103,6 @@ public class Main {
         } catch (JAXBException jaxbException) {
             System.out.println(jaxbException.getMessage());
         }
-
-        System.out.println();
 
         try {
             JAXBContext context = JAXBContext.newInstance(Library.class);

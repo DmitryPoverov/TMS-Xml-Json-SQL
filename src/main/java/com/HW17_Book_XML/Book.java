@@ -5,15 +5,14 @@ import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlType(name = "book111")
-@XmlRootElement
+@XmlType(propOrder = { "name", "yea", "marking"})
+@XmlRootElement( name = "book111" )
 
 public class Book {
 
     private int marking;
     private String name;
     private int yea;
-
     private List<Book> theSameBooks = new ArrayList<>();
 
     public Book() {
