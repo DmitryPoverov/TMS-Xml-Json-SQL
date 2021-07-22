@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlType(propOrder = { "name", "yea", "marking"})
+//@XmlType(propOrder = { "name", "yea", "marking"})
 @XmlRootElement( name = "book111" )
 
 public class Book {
