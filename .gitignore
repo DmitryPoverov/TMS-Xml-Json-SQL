@@ -1,4 +1,4 @@
 out
-.idea
-.json
-.xml
+*.idea
+*.json
+*.xml
