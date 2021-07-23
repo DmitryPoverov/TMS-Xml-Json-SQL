@@ -1,54 +1,51 @@
-package com.HW17_Book_XML;
+package com.HW17_Book_XML_JavaX;
 
+//import javax.xml.bind.annotation.XmlAccessType;
+//import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.List;
 
-//@XmlType(propOrder = { "name", "yea", "marking"})
+@XmlType(propOrder = { "name", "year", "marking"})
 @XmlRootElement( name = "book111" )
+//@XmlAccessorType(XmlAccessType.FIELD)
 
 public class Book {
 
     private int marking;
     private String name;
-    private int yea;
+    private int year;
     private List<Book> theSameBooks = new ArrayList<>();
 
     public Book() {
     }
 
-    public Book(int marking, String name, int yea) {
-        this.marking = marking;
-        this.name = name;
-        this.yea = yea;
-    }
-
     public int getMarking() {
         return marking;
     }
+
     public String getName() {
         return name;
     }
+
     public int getYear() {
-        return yea;
-    }
-    public void getSameBooks() {
-        for (Book b : theSameBooks) {
-            System.out.println(b);
-        }
+        return year;
     }
 
     public void setMarking(int marking) {
         this.marking = marking;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    public void setYear(int yea) {
-        this.yea = yea;
+
+    public void setYear(int year) {
+        this.year = year;
     }
-    public void setTheSameBooks(Book book) {
+
+    public void addBook(Book book) {
         theSameBooks.add(book);
     }
 
@@ -66,7 +63,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "№" + marking + " [" + name + ", " + yea + "]"
+        return "№" + marking + " [" + name + ", " + year + "]"
                 + (theSameBooks.size()==0? "." : (", same books: " + getBookName()));
     }
 }

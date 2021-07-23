@@ -1,4 +1,4 @@
-package com.HW17_Book_XML;
+package com.HW17_Book_XML_JavaX;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -60,10 +60,10 @@ public class Main {
             System.out.println(jaxbException.getMessage());
         }
 
-        book2.setTheSameBooks(book1);
-        book2.setTheSameBooks(book2);
-        book4.setTheSameBooks(book3);
-        book4.setTheSameBooks(book4);
+        book2.addBook(book1);
+        book2.addBook(book2);
+        book4.addBook(book3);
+        book4.addBook(book4);
 
         System.out.println("\nThe original book: " + book1);
         System.out.println("The serialized book: " + book2);
