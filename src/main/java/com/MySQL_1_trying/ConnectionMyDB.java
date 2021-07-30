@@ -1,17 +1,16 @@
-package com.MySQL_First_trying;
+package com.MySQL_1_trying;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class Person {
+public class ConnectionMyDB {
 
-    public static Connection getConnection() throws SQLException {
+    public static java.sql.Connection getConnection() throws SQLException {
         Properties properties = new Properties();
-        try (InputStream iStream = Person.class.getClassLoader().getResourceAsStream("DB.properties")) {
+        try (InputStream iStream = ConnectionMyDB.class.getClassLoader().getResourceAsStream("DB.properties")) {
             properties.load(iStream);
         }
         catch (IOException iOE) {
@@ -24,5 +23,4 @@ public class Person {
 
         return DriverManager.getConnection(url, userName, password);
     }
-
 }

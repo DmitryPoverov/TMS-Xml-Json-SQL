@@ -9,5 +9,8 @@
         <module name="TMS_HomeWorks_Maven" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TMS_HomeWorks_Maven" target="15" />
+    </bytecodeTargetLevel>
   </component>
 </project>
