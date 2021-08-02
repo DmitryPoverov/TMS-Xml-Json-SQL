@@ -112,13 +112,16 @@ public class Application {
 
     public static void showMenu() {
         System.out.print("""
-                Enter:
-                  1 - to create a DB;
-                  2 - to create a table;
-                  3 - to add Men;
-                  4 - to add a man;
-                  0 - to exit.
-                  Your choice:\040""");
+                -----------------------------------------
+                Number |        Action                  |
+                  1    |    to create a DB;             |
+                  2    |    to create a table;          |
+                  3    |    to add Men;                 |
+                  4    |    to add a man;               |
+                  5    |    to show the whole table;    |
+                  0    |    to exit.                    |
+                 ----------------------------------------
+                 Your choice:\040""");
     }
 
     public static void actions() {
