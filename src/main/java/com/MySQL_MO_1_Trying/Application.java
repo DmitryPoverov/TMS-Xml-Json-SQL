@@ -111,7 +111,7 @@ public class Application {
     }
 
     public static void showMenu() {
-        System.out.print("""
+        System.out.println("""
                 -----------------------------------------
                 Number |        Action                  |
                   1    |    to create a DB;             |
@@ -121,7 +121,7 @@ public class Application {
                   5    |    to show the whole table;    |
                   0    |    to exit.                    |
                  ----------------------------------------
-                 Your choice:\040""");
+                 Your choice:""");
     }
 
     public static void actions() {
@@ -137,7 +137,7 @@ public class Application {
                 userChoice = sc.nextInt();
             }
             catch (InputMismatchException iME) {
-                System.out.print("Enter only numbers. ");
+                System.out.print("Wrong entering. Enter only numbers. ");
             }
 
             switch (userChoice) {
@@ -161,9 +161,8 @@ public class Application {
                     showAll();
                     showMenu();
                 }
-                default -> {
-                    System.out.println("You new choice:");
-                }
+                default ->
+                    System.out.println("Enter a number from 0 to 5:");
                 case 0 -> {
                     working = false;
                     System.out.println("EXIT...");
