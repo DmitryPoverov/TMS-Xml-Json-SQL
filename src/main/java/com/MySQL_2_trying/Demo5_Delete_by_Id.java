@@ -15,7 +15,7 @@ public class Demo5_Delete_by_Id {
 
         } catch (Exception throwable) {
             System.out.println("ConnectionMyDB failed...");
-            System.out.println(throwable);
+            System.out.println(throwable.getMessage());
         }
 
     }

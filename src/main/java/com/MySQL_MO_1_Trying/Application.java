@@ -25,6 +25,9 @@ public class Application {
     private static final String SQL_SHOW_ALL =
             "SELECT * FROM Person ";
 
+    private static final String SQL_DELETE_BY_ID =
+            "DELETE FROM people_db.person WHERE Id =";
+
     public static void createDataBase(){
         try (Connection connect = MyConnect.getConnection();
              Statement state = connect.createStatement()) {
@@ -33,7 +36,8 @@ public class Application {
             System.out.println("Successful creation of DB.");
 
         } catch (SQLException | IOException exc) {
-            exc.printStackTrace();
+            System.out.println("The database has already exist...");
+            System.out.println(exc.getMessage());
         }
     }
 
@@ -47,7 +51,8 @@ public class Application {
             System.out.println("Successful creation of TABLE.");
 
         } catch (SQLException | IOException exc) {
-            exc.printStackTrace();
+            System.out.println("The table has already exist...");
+            System.out.println(exc.getMessage());
         }
     }
 
@@ -90,6 +95,44 @@ public class Application {
         }
     }
 
+//    private String deleteById = "DELETE FROM zoo_products.shop WHERE id = ";
+////    private static final String SQL_PRODUCT_BY_ID = "DELETE FROM zoo_products.shop WHERE id = 4";
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("Enter id that you want to delete.");
+//        int userChoice = sc.nextInt();
+//        try (Connection conn = ConnectToMyDB.getConnection();
+//             Statement state = conn.createStatement()){
+//            System.out.println("ConnectionMyDB to Store DB successful!");
+//            int rows1 = state.executeUpdate("DELETE FROM zoo_products.shop WHERE number = " + userChoice);
+////            int rows2 = state.executeUpdate(SQL_PRODUCT_BY_ID + userChoice);
+//            System.out.printf("%d row(s) deleted", rows1);
+//
+//        } catch (Exception throwable) {
+//            System.out.println("ConnectionMyDB failed...");
+//            System.out.println(throwable.getMessage());
+//        }
+//    }
+
+    public static void deleteById() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Which person do you want to delete?");
+        int personToDelete = sc.nextInt();
+
+        try (Connection connect = MyConnect.getConnection();
+             Statement state = connect.createStatement()) {
+            System.out.println("Successful connection.");
+            state.executeUpdate(SQL_USE_DB);
+            System.out.println("Successful start of using.");
+            int row = state.executeUpdate(SQL_DELETE_BY_ID + personToDelete);
+            System.out.printf("%d row(s) was/were deleted\n", row);
+        } catch (SQLException | IOException exc) {
+            System.out.println("There is no such person here");
+            System.out.println(exc.getMessage());
+        }
+    }
+
     public static void showAll() {
         try (Connection connect = MyConnect.getConnection();
              Statement state = connect.createStatement()) {
@@ -119,6 +162,7 @@ public class Application {
                   3    |    to add Men;                 |
                   4    |    to add a man;               |
                   5    |    to show the whole table;    |
+                  6    |    to to delete by ID;    |
                   0    |    to exit.                    |
                  ----------------------------------------
                  Your choice:""");
@@ -161,6 +205,11 @@ public class Application {
                     showAll();
                     showMenu();
                 }
+                case 6 -> {
+                    deleteById();
+                    showMenu();
+                }
+
                 default ->
                     System.out.println("Enter a number from 0 to 5:");
                 case 0 -> {

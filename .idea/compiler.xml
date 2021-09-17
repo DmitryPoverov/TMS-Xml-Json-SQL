@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TMS_HomeWorks_Maven" />
+        <module name="Maven.JDBC.SQL" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TMS_HomeWorks_Maven" target="15" />
+      <module name="Maven.JDBC.SQL" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
