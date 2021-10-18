@@ -1,20 +1,20 @@
-package by.dm_lessons.util;
+package by.dmLessons.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public final class ConnectionManager {
+public class ConnectionManagerMySQL {
 
-    private static final String URL_KEY = "db.url";
-    private static final String USER_KEY = "db.username";
-    private static final String PASSWORD_KEY = "db.password";
+    private static final String URL_KEY = "db1.url";
+    private static final String USER_KEY = "db1.username";
+    private static final String PASSWORD_KEY = "db1.password";
 
     static {
         loadDriver();
     }
 
-    private ConnectionManager() {
+    private ConnectionManagerMySQL() {
     }
 
     public static Connection open() {

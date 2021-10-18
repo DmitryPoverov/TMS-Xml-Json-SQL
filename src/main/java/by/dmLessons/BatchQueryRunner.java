@@ -1,6 +1,6 @@
-package by.dm_lessons;
+package by.dmLessons;
 
-import by.dm_lessons.util.ConnectionManager;
+import by.dmLessons.util.ConnectionManager;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -21,7 +21,7 @@ public class BatchQueryRunner {
 // Batch-операции выполняются не по одной, а всей "пачкой" (Batch - Пачка),
 // экономя таким образом время отправки запросов, т.к. нет пересылки каждой операции по отдельности.
 // Batch подходит для DDL
-            connection = ConnectionManager.open();
+            connection = ConnectionManager.get();
             connection.setAutoCommit(false);
             statement = connection.createStatement();
             statement.addBatch(deleteTicketsSql);

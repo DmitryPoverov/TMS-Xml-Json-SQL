@@ -1,4 +1,4 @@
-package by.dm_lessons.util;
+package by.dmLessons.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,8 +20,8 @@ public final class PropertiesUtil {
         return PROPERTIES.getProperty(key);
     }
 
-    // inputStream нужно закрывать, поэтому используем try с ресурсами
-    // load() считывает из resourceAsStream ранее считанные настройки
+    // InputStream нужно закрывать, для этого используем try с ресурсами.
+    // load() считывает из resourceAsStream ранее считанные настройки.
     private static void loadProperties() {
         try (InputStream resourceAsStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
             PROPERTIES.load(resourceAsStream);

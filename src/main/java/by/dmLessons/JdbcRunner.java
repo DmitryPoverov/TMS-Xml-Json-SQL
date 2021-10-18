@@ -1,6 +1,6 @@
-package by.dm_lessons;
+package by.dmLessons;
 
-import by.dm_lessons.util.ConnectionManager;
+import by.dmLessons.util.ConnectionManager;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -274,22 +274,76 @@ public class JdbcRunner {
         return result;
 ------------------------------------------------------------------------------------------------------------------------
         */
+/*        Long flight_id = 2L;
+        var ticketByFlightId = getTicketByFlightId(flight_id);
+        System.out.println(ticketByFlightId);*/
 
-//        Long flight_id = 2L;
-//        var ticketByFlightId = getTicketByFlightId(flight_id);
-//        System.out.println(ticketByFlightId);
+        var flightsBetween = getFlightsBetween
+                (LocalDate.of(2020, 1, 1).atStartOfDay(), LocalDateTime.now());
 
-        var flightsBetween = getFlightsBetween(LocalDate.of(2020, 1, 1).atStartOfDay(), LocalDateTime.now());
         System.out.println(flightsBetween);
+
+        try {
+            checkMetaData();
+        } finally {
+            ConnectionManager.closePool();
+        }
+
+    }
+
+
+// Catalog - это название базы дынных, к которой мы работаем через подключение.
+    private static void checkMetaData() throws SQLException {
+        try (var open = ConnectionManager.get()) {
+            var metaData = open.getMetaData();
+/*
+            var catalogs = metaData.getCatalogs();
+
+            while (catalogs.next()) {
+                System.out.println("\t" + catalogs.getString("TABLE_CAT")); // или 1. (cat - catalog)
+
+                var schemas = metaData.getSchemas();
+                while (schemas.next()) {
+                    System.out.println("\t\t" + schemas.getString("TABLE_SCHEM")); // или 1.
+                }        var tables = metaData.getTables(null, null, "%", null);
+                if (schemas.equals("flight_schema"))
+                   while (tables.next()) {
+                       System.out.println(tables.getString("TABLE_NAME"));
+                   }
+            }*/
+            var databaseProductName = metaData.getDatabaseProductName();
+            System.out.println("1) metaData.getDatabaseProductName(): " + databaseProductName);
+            var catalogs = metaData.getCatalogs();
+            while (catalogs.next()) {
+                var catalog = catalogs.getString(1);
+                System.out.println("\t2) catalogs.getString(1): " + catalog);
+
+                var schemas1 = metaData.getSchemas();
+                while (schemas1.next()) {
+                    var schema = schemas1.getString(1);
+                    System.out.println("\t\t3) schemas1.getString(1): " + schema);
+
+// Выведем только таблицы, содержащиеся в схеме flight_schema и которые относятся к типу "TABLE"
+                    var tables = metaData.getTables(catalog, schema, "%",  new String[] {"TABLE"});
+                    if (schema.equals("flight_schema")) {
+                        while (tables.next()) {
+                            var table = tables.getString(3);
+                            System.out.println("\t\t\t4) tables.getString(3): " + table);
+                            if (table.equals("aircraft")) {
+                                var columns = metaData.getColumns(catalog, schema, "%", null);
+                                while (columns.next()) {
+                                    var column = columns.getString(4);
+                                    System.out.println("5) metaData.getColumns(null, null, \"%\", null): " + column);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static List<Long> getFlightsBetween(LocalDateTime start, LocalDateTime end) throws SQLException {
-
-/*        String sql = """
-                SELECT id
-                FROM flight_schema.flight
-                WHERE departure_date BETWEEN ? AND ?
-                """;*/
 
         String sql = """
                 SELECT id
@@ -299,7 +353,7 @@ public class JdbcRunner {
 
         List<Long> result = new ArrayList<>();
 
-        try (var open = ConnectionManager.open();
+        try (var open = ConnectionManager.get();
              var preparedStatement = open.prepareStatement(sql)){
 
 // Параметр для экономии ОП, он указывает сколько строк берется за одну итерацию.

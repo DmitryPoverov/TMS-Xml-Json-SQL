@@ -1,6 +1,6 @@
-package by.dm_lessons;
+package by.dmLessons;
 
-import by.dm_lessons.util.ConnectionManager;
+import by.dmLessons.util.ConnectionManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ public class TransactionRunner {
         PreparedStatement deleteTicketStatement = null;
 
         try {
-            connection = ConnectionManager.open();
+            connection = ConnectionManager.get();
             deleteFlightStatement = connection.prepareStatement(deleteFlightSql);
             deleteTicketStatement = connection.prepareStatement(deleteTicketsSql);
 
@@ -35,7 +35,7 @@ public class TransactionRunner {
 
 // Генерируем искусственно исключение. Без if ошибка "Недостижимое условие".
             if (true) {
-                throw new RuntimeException("An artificial exception.");
+                throw new RuntimeException("*** An artificial exception. ***");
             }
 // После этого исключения выполнение удаления таблицы с полетами не произойдет
 // Получается что строка из билетов уже удалится, а из полетов соответствующие строки не удалятся
