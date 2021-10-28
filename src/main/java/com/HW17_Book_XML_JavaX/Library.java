@@ -1,14 +1,12 @@
 package com.HW17_Book_XML_JavaX;
 
-//import javax.xml.bind.annotation.XmlAccessType;
-//import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
+
 import java.util.List;
 
 @XmlType(propOrder = {"openingAge", "address", "books"})
 @XmlRootElement(name = "library_TAG")
-//@XmlAccessorType(XmlAccessType.FIELD)
 
 public class Library {
 

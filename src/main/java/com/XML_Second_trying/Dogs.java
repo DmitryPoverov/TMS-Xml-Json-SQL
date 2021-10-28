@@ -1,7 +1,7 @@
 package com.XML_Second_trying;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {"name","weight","award"})
 @XmlRootElement
