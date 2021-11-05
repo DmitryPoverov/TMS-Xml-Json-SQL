@@ -1,6 +1,6 @@
 package by.aquariumTask.employees;
 
-import by.eTask.model.ItEmployees;
+import by.epamTask.model.ItEmployees;
 
 public class QaEmployees extends ItEmployees {
 

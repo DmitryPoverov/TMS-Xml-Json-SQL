@@ -1,4 +1,4 @@
-package by.eTask.model;
+package by.epamTask.model;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
