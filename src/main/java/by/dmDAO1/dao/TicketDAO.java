@@ -200,7 +200,7 @@ public class TicketDAO implements DAO<Long, TicketEntity> {
         }
     }
 
-// Чтобы не дублировать код мы в этом методе открываем соединение и  его + id передаем в перегруженный метод.
+// Чтобы не дублировать код в этом методе открываем соединение и передаем (его и id) в перегруженный метод.
     @Override
     public Optional<TicketEntity> selectById(Long id) {
         try (var connection = ConnectionManager.get()) {
