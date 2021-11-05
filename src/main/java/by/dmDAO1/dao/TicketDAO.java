@@ -91,8 +91,7 @@ public class TicketDAO implements DAO<Long, TicketEntity> {
 //        }
 //    }
 //
-// Это версия поиска записей по ID с учетом вынесенного метода  buildTicket().
-//
+// Это версия поиска записей по ID с учетом вынесенного метода buildTicket()
 // public Optional<Ticket> findById(Long id) {
 //        try (var connection = ConnectionManager.get();
 //             var preparedStatement = connection.prepareStatement(FIND_BY_ID_SQL)) {
