@@ -3,7 +3,8 @@ package by.enumPack;
 public enum AccessoryEnum {
 
     FIRST_VAR(1),
-    SECOND_VAR(2);
+    SECOND_VAR(2),
+    THIRD_VAR(3);
 
     int number;
 
