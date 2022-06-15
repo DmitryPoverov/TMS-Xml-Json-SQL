@@ -32,6 +32,7 @@ public final class ConnectionManager {
         var size = poolSize == null ? DEFAULT_POOL_SIZE : Integer.parseInt(poolSize);
         pool = new ArrayBlockingQueue<>(size);
         sourceConnection = new ArrayList<>(size);
+        sourceConnection.stream().flatMap()
 
         for (int i = 0; i < size; i++) {
 
