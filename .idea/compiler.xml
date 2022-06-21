@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TMS_HomeWorks_Maven" />
+        <module name="tms_homeworks_enum_xml_json_mysql_maven" />
       </profile>
     </annotationProcessing>
   </component>
