@@ -1,7 +1,7 @@
-package by.dmdev.sql.dao.dao;
+package by.dmdev.sql.flight.dao;
 
-import by.dmdev.sql.dao.entity.FlightEntity;
-import by.dmdev.sql.dao.exception.DaoException;
+import by.dmdev.sql.flight.entity.FlightEntity;
+import by.dmdev.sql.flight.exception.DaoException;
 import by.dmdev.sql.lessons.util.ConnectionManager;
 
 import java.sql.SQLException;

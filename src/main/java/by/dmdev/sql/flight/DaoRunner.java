@@ -1,8 +1,8 @@
-package by.dmdev.sql.dao;
+package by.dmdev.sql.flight;
 
-import by.dmdev.sql.dao.dao.TicketDAO;
-import by.dmdev.sql.dao.dto.TicketFilter;
-import by.dmdev.sql.dao.entity.TicketEntity;
+import by.dmdev.sql.flight.dao.TicketDAO;
+import by.dmdev.sql.flight.dto.TicketFilter;
+import by.dmdev.sql.flight.entity.TicketEntity;
 
 import java.math.BigDecimal;
 

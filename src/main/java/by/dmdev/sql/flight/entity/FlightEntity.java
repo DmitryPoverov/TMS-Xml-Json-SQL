@@ -1,6 +1,4 @@
-package by.dmdev.sql.dao.entity;
-
-import java.time.LocalDateTime;
+package by.dmdev.sql.flight.entity;
 
 public record FlightEntity(Long id,
                            String flightNo,

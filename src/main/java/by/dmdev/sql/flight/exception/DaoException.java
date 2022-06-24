@@ -1,4 +1,4 @@
-package by.dmdev.sql.dao.exception;
+package by.dmdev.sql.flight.exception;
 
 public class DaoException extends RuntimeException{
 

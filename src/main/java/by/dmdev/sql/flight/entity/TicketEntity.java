@@ -1,4 +1,4 @@
-package by.dmdev.sql.dao.entity;
+package by.dmdev.sql.flight.entity;
 
 import java.math.BigDecimal;
 

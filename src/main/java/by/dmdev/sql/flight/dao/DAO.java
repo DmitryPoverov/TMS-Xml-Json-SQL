@@ -1,4 +1,4 @@
-package by.dmdev.sql.dao.dao;
+package by.dmdev.sql.flight.dao;
 
 import java.util.List;
 import java.util.Optional;
