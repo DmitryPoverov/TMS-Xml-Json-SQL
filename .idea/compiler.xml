@@ -6,13 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Maven.XML.JSON.JDBC.SQL" />
+        <module name="tms_homeworks_xml_json_mysql_maven" />
         <module name="TMS_HomeWorks_Maven" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Maven.XML.JSON.JDBC.SQL" target="16" />
-      <module name="TMS_HomeWorks_Maven" target="16" />
-    </bytecodeTargetLevel>
   </component>
 </project>
