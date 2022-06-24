@@ -1,4 +1,4 @@
-package by.tms.hw17_book_json;
+package by.tms.json.hw17_book_json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;

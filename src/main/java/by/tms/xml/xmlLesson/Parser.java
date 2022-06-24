@@ -1,7 +1,7 @@
-package by.tms.xmlLesson;
+package by.tms.xml.xmlLesson;
 
-import by.tms.xmlLesson.model.People;
-import by.tms.xmlLesson.model.Root;
+import by.tms.xml.xmlLesson.model.People;
+import by.tms.xml.xmlLesson.model.Root;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

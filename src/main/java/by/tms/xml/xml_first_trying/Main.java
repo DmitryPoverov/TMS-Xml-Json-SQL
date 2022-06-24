@@ -1,6 +1,6 @@
-package by.tms.xml_first_trying;
+package by.tms.xml.xml_first_trying;
 
-import by.tms.xml_first_trying.Cat.Cat;
+import by.tms.xml.xml_first_trying.Cat.Cat;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;

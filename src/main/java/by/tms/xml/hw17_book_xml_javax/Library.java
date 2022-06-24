@@ -1,4 +1,4 @@
-package by.tms.hw17_book_xml_javax;
+package by.tms.xml.hw17_book_xml_javax;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;

@@ -1,4 +1,4 @@
-package by.tms.xmlLesson;
+package by.tms.xml.xmlLesson;
 
 public class XmlMain {
 

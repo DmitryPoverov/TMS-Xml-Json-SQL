@@ -1,4 +1,4 @@
-package by.tms.xmlLesson.model;
+package by.tms.xml.xmlLesson.model;
 
 import java.util.List;
 

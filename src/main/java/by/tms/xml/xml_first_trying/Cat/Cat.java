@@ -1,4 +1,4 @@
-package by.tms.xml_first_trying.Cat;
+package by.tms.xml.xml_first_trying.Cat;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;

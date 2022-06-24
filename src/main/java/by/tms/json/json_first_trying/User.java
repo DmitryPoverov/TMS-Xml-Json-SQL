@@ -1,4 +1,4 @@
-package by.tms.json_first_trying;
+package by.tms.json.json_first_trying;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

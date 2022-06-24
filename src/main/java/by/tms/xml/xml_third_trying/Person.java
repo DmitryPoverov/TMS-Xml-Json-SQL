@@ -1,4 +1,4 @@
-package by.tms.xml_third_trying;
+package by.tms.xml.xml_third_trying;
 
 public class Person {
 
